@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Kuumaksete kalkulaator</title>
+</head>
+<body>
+    <div class="content">
+        <div class="header">Kuumaksete kalkulaator</div>
+
+        <div class="radio_container">
+            <div class="radio_buttons"><input type="radio" name="radio" id="0" value="0" onchange="calculate(this)"><span class="checkmark">‎</span><div id="radio_text">Päikesepaneelid</div></div>
+            <div class="radio_buttons"><input type="radio" name="radio" id="1" value="1" onchange="calculate(this)"><span class="checkmark">‎</span><div id="radio_text">Soojuspump</div></div>
+            <div class="radio_buttons"><input type="radio" name="radio" id="2" value="2" onchange="calculate(this)"><span class="checkmark">‎</span><div id="radio_text">Elektritööd või gaasitööd</div></div>
+            <div class="radio_buttons"><input type="radio" name="radio" id="3" value="3" onclick="calculate(this)"><span class="checkmark">‎</span><div id="radio_text">Off-Grid võrguvaba elekter</div></div>
+            <div class="radio_buttons"><input type="radio" name="radio" id="4" value="4" onclick="calculate(this)"><span class="checkmark">‎</span><div id="radio_text">Elektriautode laadimislahendused</div></div>
+        </div>
+
+        <hr>
+        <div id="sum_title">Summa:</div>
+        <div class="Select_sum">
+        <div class="main">
+            <input type="range" min="300" max="25000" value="1000" step="100" id="Slider" onchange="calculate(this)" oninput="calculate(this)">
+            <div id="Selector">
+                <div class="SelectBtn"></div>
+                <div id="Selectvalue">5000 €</div>
+            </div>
+            <div id="ProgressBar"></div>
+        </div>
+        <div id="start_sum">300€</div>
+        <div id="end_sum">25 000€</div>
+        <hr id="line1">
+
+        <div id="left_column">
+            <span>Periood: <span class="red">*</span></span>
+            <select name="drop1" id="Select_Box" onchange="calculate()"></select>
+        </div>
+        <div id="right_column">
+            <span>Sissemakse(eur):<span class="red">*</span></span>
+            <input type="number" id="deposit" name="deposit" value="" placeholder="-" oninput="calculate()">
+        </div>
+        
+        
+
+        
+        </div>
+        <div class="results">
+            <ul class="List_container">
+                <li class="white">Intress<span class="Right_Text" id="interest_output"></span></li>
+                <li class="gray">Lepingutasu<span class="Right_Text" id="contract_output"></span></li>
+                <li class="white">Igakuine haldustasu<span class="Right_Text" id="service_output"></span></li>
+                <li class="gray">Periood<span class="Right_Text" id="period_output"></span></li>
+                <li class="white">Projekti maksumus<span class="Right_Text" id="totalsum_output"></span></li>
+                <li class="blue">Kuumakse<span class="Montly_Payment" id="monthly_output"></span></li>
+              </ul>
+        </div>
+
+        <div id="footer"><button type="button" id="submit_button" onclick="alert('esitatud')">Esitan taotluse 〉</button></div>
+
+        <script src="script.js"></script>
+
+    </div>
+    
+</body>
+</html>
